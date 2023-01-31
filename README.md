@@ -9,6 +9,8 @@ node server.js
 npm i
 - komenda uruchomieniowa
 ng serve
+- dodawanie komponentów
+ng generate component xyz
 # packages
 - bootstrap
 https://ng-bootstrap.github.io/#/home
