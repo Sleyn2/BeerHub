@@ -1,0 +1,17 @@
+body {
+  padding-top: 50px; /* small fix */
+}
+.carousel-inner {
+  height: calc(100vh - 50px); /* full screen */
+}
+.carousel-inner > .item > img {
+  width: 100%; /* to make smaller images look full */
+}
+
+.carousel-inner > .item {
+  width: 100%;
+}
+
+.image {
+    width: 100%;
+}
