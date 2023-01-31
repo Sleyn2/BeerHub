@@ -54,6 +54,11 @@ const User = sequelize.define('user', {
 })
 
 const Favourites  =- sequelize.define('favourites', {
+    id: {
+        type: Sequelize.INTEGER,
+        primaryKey: true,
+        autoIncrement: true
+    },
     beer_id: Sequelize.INTEGER,
     user_id: Sequelize.INTEGER,
     deleted: Sequelize.BOOLEAN
