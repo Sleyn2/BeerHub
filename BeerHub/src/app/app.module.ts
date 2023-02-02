@@ -9,6 +9,7 @@ import { MaterialModule } from './material-module';
 import { CarouselComponent } from './carousel/carousel.component';
 import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './main-page/main-page.component';
+import { BeerListComponent } from './beer-list/beer-list.component';
 
 @NgModule({
   
@@ -24,6 +25,7 @@ import { MainPageComponent } from './main-page/main-page.component';
   declarations: [
     AppComponent,
     MainPageComponent,
+    BeerListComponent,
     
   ],
   providers: [],
