@@ -10,6 +10,7 @@ import { CarouselComponent } from './carousel/carousel.component';
 import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './main-page/main-page.component';
 import { BeerListComponent } from './beer-list/beer-list.component';
+import { MostLikedComponent } from './most-liked/most-liked.component';
 
 @NgModule({
   
@@ -26,6 +27,7 @@ import { BeerListComponent } from './beer-list/beer-list.component';
     AppComponent,
     MainPageComponent,
     BeerListComponent,
+    MostLikedComponent,
     
   ],
   providers: [],
