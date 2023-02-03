@@ -45,77 +45,26 @@ p {
   color: #fff;
   display: flex;
   margin: 60px auto 32px;
-  height: calc(100% - 200px);
+  height: calc(100% - 100px);
   max-height: 100vh;
   flex-direction: column;
   align-items: center;
 }
 
-svg.material-icons {
-  height: 24px;
-  width: auto;
-}
-
-svg.material-icons:not(:last-child) {
-  margin-right: 8px;
-}
-
-.card svg.material-icons path {
-  fill: #888;
-}
-
 .page {
   padding-top: 5%;
-  width: 80%;
+  width: 95%;
   height: 100%;
 }
 
 footer {
-  position: sticky;
-  bottom: 0px;
-  height: 5%;
-  width: 100%;
-  color: white;
-  justify-content: center;
-  align-items: center;
-}
-
-footer {
-  margin-top: 8px;
   display: flex;
-  align-items: center;
-  line-height: 20px;
+  position: sticky;
+  width: 100%;
+  justify-content: center;
 }
 
 footer a {
   display: flex;
   align-items: center;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 767px) {
-  .card-container > *:not(.circle-link),
-  .terminal {
-    width: 100%;
-  }
-
-  .card:not(.highlight-card) {
-    height: 16px;
-    margin: 8px 0;
-  }
-  g c .card.highlight-card span {
-    margin-left: 72px;
-  }
-
-  svg#rocket-smoke {
-    right: 120px;
-    transform: rotate(-5deg);
-  }
-}
-
-@media screen and (max-width: 575px) {
-  svg#rocket-smoke {
-    display: none;
-    visibility: hidden;
-  }
 }
