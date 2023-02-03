@@ -1,6 +1,8 @@
 import { Component, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
+import { BeerModel } from '../shared/models/beer.model';
+import { PunkAPIService } from '../shared/services/PunkAPI.service';
 
 @Component({
   selector: 'app-beer-list',
@@ -9,12 +11,23 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class BeerListComponent {
   displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  dataSource: MatTableDataSource<BeerModel>;
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  ngAfterViewInit() {
-    this.dataSource.paginator = this.paginator;
+  constructor(private _punkApiService : PunkAPIService) {
+  }
+
+  ngOnInit() {
+    this.query();
+  }
+
+  query() {
+    this._punkApiService.query().subscribe(x => {
+      this.dataSource = new MatTableDataSource<BeerModel>(x);
+      this.dataSource.paginator = this.paginator;
+    })
+    
   }
 }
 
