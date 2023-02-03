@@ -11,9 +11,10 @@ import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './main-page/main-page.component';
 import { BeerListComponent } from './beer-list/beer-list.component';
 import { MostLikedComponent } from './most-liked/most-liked.component';
+import { PunkAPIService } from './shared/services/PunkAPI.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -21,16 +22,16 @@ import { MostLikedComponent } from './most-liked/most-liked.component';
     NgbModule,
     MaterialModule,
     FormsModule,
-    CarouselComponent
+    CarouselComponent,
+    HttpClientModule
   ],
   declarations: [
     AppComponent,
     MainPageComponent,
     BeerListComponent,
     MostLikedComponent,
-    
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [PunkAPIService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

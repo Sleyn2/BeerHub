@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { BeerFavouriteModel } from '../models/beer-favourite';
+import { BeerFavouriteModel } from '../shared/models/beer-favourite.model';
 
 @Component({
   selector: 'app-most-liked',

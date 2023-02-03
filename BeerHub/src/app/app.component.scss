@@ -70,28 +70,6 @@ svg.material-icons:not(:last-child) {
   height: 100%;
 }
 
-footer {
-  position: sticky;
-  bottom: 0px;
-  height: 5%;
-  width: 100%;
-  color: white;
-  justify-content: center;
-  align-items: center;
-}
-
-footer {
-  margin-top: 8px;
-  display: flex;
-  align-items: center;
-  line-height: 20px;
-}
-
-footer a {
-  display: flex;
-  align-items: center;
-}
-
 /* Responsive Styles */
 @media screen and (max-width: 767px) {
   .card-container > *:not(.circle-link),
