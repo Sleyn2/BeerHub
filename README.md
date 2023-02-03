@@ -7,6 +7,7 @@ node server.js
 # Angular app
 - instalacja
 npm i
+npm install -g @angular/cli
 - komenda uruchomieniowa
 ng serve
 - dodawanie komponentów
