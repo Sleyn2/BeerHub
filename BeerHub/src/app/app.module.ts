@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MaterialModule } from './material-module';
 import { CarouselComponent } from './carousel/carousel.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainPageComponent } from './main-page/main-page.component';
 import { BeerListComponent } from './beer-list/beer-list.component';
 import { MostLikedComponent } from './most-liked/most-liked.component';
@@ -23,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
     MaterialModule,
     FormsModule,
     CarouselComponent,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   declarations: [
     AppComponent,
