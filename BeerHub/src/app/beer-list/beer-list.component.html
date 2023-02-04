@@ -8,12 +8,12 @@
     <table mat-table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Id</th>
-        <td mat-cell [matTooltip]="element.tagline" *matCellDef="let element">{{ element.id}}</td>
+        <td mat-cell [matTooltip]="element.tagline" *matCellDef="let element"> {{ element.id}}</td>
       </ng-container>
 
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Beer name</th>
-        <td mat-cell [matTooltip]="element.tagline" *matCellDef="let element">{{ element.name }}</td>
+        <td mat-cell [matTooltip]="element.tagline" *matCellDef="let element"><a [routerLink]="['/beer', element.id]">{{ element.name}}</a>  </td>
       </ng-container>
 
       <ng-container matColumnDef="abv">

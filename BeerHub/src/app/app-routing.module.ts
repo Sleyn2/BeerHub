@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: '', component: MainPageComponent, pathMatch: 'full' },
   { path: 'beer-list', component: BeerListComponent, pathMatch: 'full' }
 ];
+//{ path: 'beer/:beerId', component: BeerComponent, pathMatch: 'full' }
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
