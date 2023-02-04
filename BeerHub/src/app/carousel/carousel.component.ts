@@ -11,8 +11,10 @@ import { FormsModule } from '@angular/forms';
 })
 export class CarouselComponent {
 
-	images = [62, 83, 466, 965, 982, 1043, 738].map((n) => `https://picsum.photos/id/${n}/900/500`);
-
+	images = [1, 2, 3].map((n) => `../../assets/carousel_images/${n}.png`);
+	
+	titles = ["History of beer", "Lagers - bottom-fermented beers", "Ales - top-fermented beers"]
+	
 	paused = false;
 
 	@ViewChild('carousel', { static: true }) carousel: NgbCarousel;
