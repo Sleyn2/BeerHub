@@ -2,18 +2,21 @@ import { Component, ViewChild } from '@angular/core';
 import { NgbCarousel, NgbCarouselModule, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-carousel',
   standalone: true,
-	imports: [NgbCarouselModule, NgFor, FormsModule],
+	imports: [NgbCarouselModule, NgFor, FormsModule, RouterModule],
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.scss']
 })
 export class CarouselComponent {
 
-	images = [1, 2, 3].map((n) => `../../assets/carousel_images/${n}.png`);
+	images = [1, 2].map((n) => `../../assets/carousel_images/${n}.png`);
 	
-	titles = ["History of beer", "Lagers - bottom-fermented beers", "Ales - top-fermented beers"]
+	titles = ["Beer throughout the history", "Types of beer"]
+
+	router_links = ["beer-history", "beer-types"]
 	
 	paused = false;
 
