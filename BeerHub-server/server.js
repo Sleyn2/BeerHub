@@ -171,16 +171,18 @@ function getUsers(request, response) {
 }
 
 // BeerHub - PunkAPI
-function query(request, response) {
-  axios({
-    method: "get",
-    url: "https://api.punkapi.com/v2/beers",
-  }).then(resp => {
-    response.send(resp.data)
-  });
+async function query(request, response) {
+  let dataSet = [];
+  for (let i = 1; i < 6; i++) {
+    let res = await axios.get("https://api.punkapi.com/v2/beers", {
+      params: { page: i, per_page: 80 }
+    });
+    dataSet.push(...res.data);
+  }
+  response.send(dataSet);
 }
 
-app.get("/api/beer-list/", [query]);
+app.get("/api/beer-list-all/", [query]);
 
 app.post("/api/register/", [register]);
 

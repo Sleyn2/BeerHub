@@ -13,8 +13,7 @@ import { BeerModel } from "../models/beer.model";
     };
 
     query(options?: any): Observable<BeerModel[]> {
-      console.log('dupa')
         let reqOptions = {...this.httpOptions};
-        return this._http.get<BeerModel[]>(this._appUrl + '/beer-list', reqOptions);
+        return this._http.get<BeerModel[]>(this._appUrl + '/beer-list-all', reqOptions);
     }
   }
