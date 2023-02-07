@@ -37,16 +37,35 @@ $BeerHub-theme: mat.define-light-theme(
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
 
-html {
-  height: 100%;
-}
+// html {
+//   background: -webkit-gradient(linear, left top, left bottom, from(#7c7c7c), to(#4d4d4d)) fixed;
+// }
 
 body {
-  height: 150%;
-  color: #fff;
-  font-family: Nunito Sans !important;
+  height: 100%;
   margin: 0;
-  background: linear-gradient(55deg, #5c5c5c 0%, #494949   51%, #353535 85%);
+  background-repeat: no-repeat;
+  font-family: Nunito Sans !important;
+  background:none;
+}
+
+html {	
+  height: auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFC107), color-stop(0.25, #FFB300), color-stop(0.5, #FFA000), color-stop(0.75, #FF8F00), to(#FF6F00)) fixed;
+
+	//background: linear-gradient(to bottom, #B721FF, #2AF598, #fec051, #FEE140, #FA709A );
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+html:before{
+	content:'';
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: -1;
+	background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.2), #1d1d1d 75%);
 }
 
 a:link {

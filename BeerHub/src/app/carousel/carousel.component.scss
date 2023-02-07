@@ -1,9 +1,15 @@
 body {
   padding-top: 50px; /* small fix */
 }
-.carousel-inner {
-  height: calc(100vh - 50px); /* full screen */
+
+::ng-deep .carousel-inner {
+  border-radius: 50px;
+  width: 90%;
+  margin-left: 5%;
+  margin-right: 5%;
 }
+
+
 .carousel-inner > .item > img {
   width: 100%; /* to make smaller images look full */
 }
