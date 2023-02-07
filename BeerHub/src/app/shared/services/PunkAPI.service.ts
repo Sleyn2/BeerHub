@@ -16,4 +16,12 @@ import { BeerModel } from "../models/beer.model";
         let reqOptions = {...this.httpOptions};
         return this._http.get<BeerModel[]>(this._appUrl + '/beer-list-all', reqOptions);
     }
+
+    getBeer(id: number): Observable<BeerModel> {
+      return this._http.get<BeerModel>(this._appUrl + '/beer/' + id);
+    }
+
+    getRandomBeer(id: number): Observable<BeerModel> {
+      return this._http.get<BeerModel>(this._appUrl + '/beer/random');
+    }
   }
