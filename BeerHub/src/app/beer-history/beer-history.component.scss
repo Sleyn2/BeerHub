@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* khung cover */
+.page-section {
+    padding: 7.5rem 0;
+}
+
+/* khunng chính (ul)*/
+.linetime {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.linetime:before {
+    content: "";
+    top: 0;
+    left: 40px;
+    height: 100%;
+    width: 2px;
+    background-color: black;
+    border: 1px solid gray;
+    position: absolute;
+    margin-left: 1px;
+}
+
+/* khung nội dung (li)*/
+.linetime li {
+    position: relative;
+    margin-bottom: 2rem;
+    min-height: 80px;
+}
+
+.lineime li:before,
+.linetime li:after {
+    display: table;
+    content: "";
+}
+
+.linetime li:after {
+    clear: both;
+}
+
+.linetime-panel {
+    position: relative;
+    padding-left: 100px;
+}
+
+.linetime-img {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border: 6px solid #000;
+    overflow: hidden;
+    background: #000;
+    color: #fff;
+}
+
+.linetime-img h4 {
+    font-size: .8rem;
+    margin-top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (min-width: 768px) {
+
+    /* khunng chính (ul)*/
+    .linetime:before {
+        left: 50%;
+    }
+
+    /* khung nội dung (li)*/
+    .linetime li {
+        position: relative;
+        margin-bottom: 2rem;
+        min-height: 50px;
+    }
+
+    .linetime-panel {
+        width: 40%;
+        padding: 0;
+        float: left;
+        text-align: right;
+    }
+
+    .linetime-img {
+        left: 50%;
+        transform: translateX(-48%);
+        width: 120px;
+        height: 120px;
+    }
+
+    .linetime-img h4 {
+        font-size: 1rem;
+    }
+
+    .inverted {
+        float: right;
+        text-align: left;
+    }
+}
+@media (min-width: 992px) {
+    /* khung nội dung (li)*/
+    .linetime li {
+        position: relative;
+        margin-bottom: 4rem;
+        min-height: 50px;
+    }
+    .linetime-img {
+        width: 170px;
+        height: 170px;
+    }
+    .linetime-img h4 {
+        font-size: calc(1.275rem + 0.3vw);
+    }
+    .linetime-panel {
+        padding: 0 1.25rem;
+    }
+}
