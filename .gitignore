@@ -104,4 +104,4 @@ dist
 .tern-port
 
 # DB
-BeerHub-server\orm-db.sqlite
+BeerHub-server/orm-db.sqlite
