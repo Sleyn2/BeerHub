@@ -15,6 +15,12 @@ import { PunkAPIService } from './shared/services/PunkAPI.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BeerHistoryComponent } from './beer-history/beer-history.component';
 import { BeerTypesComponent } from './beer-types/beer-types.component';
+import {
+  FacebookLoginProvider,
+  GoogleLoginProvider,
+  SocialAuthServiceConfig,
+  SocialLoginModule,
+} from '@abacritt/angularx-social-login';
 
 @NgModule({
   imports: [
@@ -27,6 +33,7 @@ import { BeerTypesComponent } from './beer-types/beer-types.component';
     CarouselComponent,
     HttpClientModule,
     ReactiveFormsModule,
+    SocialLoginModule,
   ],
   declarations: [
     AppComponent,
@@ -36,7 +43,24 @@ import { BeerTypesComponent } from './beer-types/beer-types.component';
     BeerHistoryComponent,
     BeerTypesComponent,
   ],
-  providers: [PunkAPIService],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('208567128833-81qak2n21290s6ie0gtkrlrbl6i5jvma.apps.googleusercontent.com'),
+          },
+        ],
+        onError: (err) => {
+          console.error(err);
+        },
+      } as SocialAuthServiceConfig,
+    },
+    PunkAPIService,
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

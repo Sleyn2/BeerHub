@@ -17,6 +17,19 @@
   </div>
 
   <div class="page">
+    <div style="justify-content: center; display: flex">
+      <asl-google-signin-button *ngIf="!this.loggedIn"
+        type="icon"
+        size="medium"
+        shape="circle"
+        width="300"
+      ></asl-google-signin-button>
+      <img src="{{ user?.photoUrl }}" referrerpolicy="no-referrer" />
+      <div>
+        <h4>{{ user?.name }}</h4>
+        <p>{{ user?.email }}</p>
+      </div>
+    </div>
     <router-outlet></router-outlet>
   </div>
   <!-- Footer -->
