@@ -67,21 +67,62 @@ const Favourites = -sequelize.define("favourites", {
   deleted: Sequelize.BOOLEAN,
 });
 
-// const Message = sequelize.define('message', {
-//     message_id: {
-//       type: Sequelize.INTEGER,
-//       primaryKey: true,
-//       autoIncrement: true
-//     },
-//     message_from_user_id: Sequelize.INTEGER,
-//     message_to_user_id: Sequelize.INTEGER,
-//     message_text: Sequelize.STRING
-// })
-
 // synchroniznacja bazy danych - np. tworzenie tabel
 sequelize.sync({ force: true }).then(() => {
   console.log(`Database & tables created!`);
 });
+
+app.get("/api/beer/:id", [beer]);
+
+app.get("/api/beer/random", [randomBeer]);
+
+app.get("/api/beer-list-all/", [query]);
+
+app.post("/api/register/", [register]);
+
+app.post("/api/login/", [login]);
+
+app.get("/api/login-test/", [checkSessions, loginTest]);
+
+app.get("/api/logout/", [checkSessions, logout]);
+
+app.get("/api/users/", [checkSessions, getUsers]);
+
+app.get("/api/messages/:id", [checkSessions, getMessages]);
+
+app.post("/api/messages/", [checkSessions, sendMessages]);
+
+app.use(express.static(__dirname + "/static/"));
+
+// BeerHub - PunkAPI
+async function query(request, response) {
+  let dataSet = [];
+  for (let i = 1; i < 6; i++) {
+    let res = await axios.get("https://api.punkapi.com/v2/beers", {
+      params: { page: i, per_page: 80 },
+    });
+    dataSet.push(...res.data);
+  }
+  response.send(dataSet);
+}
+
+async function beer(request, response) {
+  if (request.params.id < 1 || request.params.id > 325) {
+    response.send({ error: "wrong value" });
+    return;
+  }
+  let res = await axios.get(
+    "https://api.punkapi.com/v2/beers/" + request.params.id
+  );
+  response.send(res.data);
+}
+
+async function randomBeer(request, response) {
+  let res = await axios.get("https://api.punkapi.com/v2/beers/random");
+  response.send(res.data);
+}
+
+//lab login
 
 // rejestrowanie użytkownika
 function register(request, response) {
@@ -170,30 +211,6 @@ function getUsers(request, response) {
   }
 }
 
-// BeerHub - PunkAPI
-function query(request, response) {
-  axios({
-    method: "get",
-    url: "https://api.punkapi.com/v2/beers",
-  }).then(resp => {
-    response.send(resp.data)
-  });
-}
-
-app.get("/api/beer-list/", [query]);
-
-app.post("/api/register/", [register]);
-
-app.post("/api/login/", [login]);
-
-app.get("/api/login-test/", [checkSessions, loginTest]);
-
-app.get("/api/logout/", [checkSessions, logout]);
-
-app.get("/api/users/", [checkSessions, getUsers]);
-
-app.use(express.static(__dirname + "/static/"));
-
 server.on("upgrade", function (request, socket, head) {
   // Sprawdzenie czy dla danego połączenia istnieje sesja
   sessionParser(request, {}, () => {
@@ -268,7 +285,6 @@ function getMessages(request, response) {
     response.send({ loggedin: false });
   }
 }
-app.get("/api/messages/:id", [checkSessions, getMessages]);
 
 function sendMessages(request, response) {
   var message_text = request.body.message_text;
@@ -313,4 +329,3 @@ function sendMessages(request, response) {
     }
   });
 }
-app.post("/api/messages/", [checkSessions, sendMessages]);

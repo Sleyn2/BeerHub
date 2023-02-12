@@ -45,55 +45,28 @@ p {
   color: #fff;
   display: flex;
   margin: 60px auto 32px;
-  height: calc(100% - 200px);
+  height: calc(100% - 100px);
   max-height: 100vh;
   flex-direction: column;
   align-items: center;
 }
 
-svg.material-icons {
-  height: 24px;
-  width: auto;
-}
-
-svg.material-icons:not(:last-child) {
-  margin-right: 8px;
-}
-
-.card svg.material-icons path {
-  fill: #888;
-}
-
 .page {
   padding-top: 5%;
-  width: 80%;
+  width: 85%;
   height: 100%;
+  border-radius: 25px;
+  background: #4d4d4d;
 }
 
-/* Responsive Styles */
-@media screen and (max-width: 767px) {
-  .card-container > *:not(.circle-link),
-  .terminal {
-    width: 100%;
-  }
-
-  .card:not(.highlight-card) {
-    height: 16px;
-    margin: 8px 0;
-  }
-  g c .card.highlight-card span {
-    margin-left: 72px;
-  }
-
-  svg#rocket-smoke {
-    right: 120px;
-    transform: rotate(-5deg);
-  }
+footer {
+  display: flex;
+  position: sticky;
+  width: 100%;
+  justify-content: center;
 }
 
-@media screen and (max-width: 575px) {
-  svg#rocket-smoke {
-    display: none;
-    visibility: hidden;
-  }
+footer a {
+  display: flex;
+  align-items: center;
 }

@@ -11,8 +11,8 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$BeerHub-primary: mat.define-palette(mat.$indigo-palette);
-$BeerHub-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$BeerHub-primary: mat.define-palette(mat.$amber-palette);
+$BeerHub-accent: mat.define-palette(mat.$orange-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
 $BeerHub-warn: mat.define-palette(mat.$red-palette);
@@ -37,13 +37,41 @@ $BeerHub-theme: mat.define-light-theme(
 /* Importing Bootstrap SCSS file. */
 @import "bootstrap/scss/bootstrap";
 
-html,
+// html {
+//   background: -webkit-gradient(linear, left top, left bottom, from(#7c7c7c), to(#4d4d4d)) fixed;
+// }
+
 body {
   height: 100%;
-}
-body {
-  background-color: #353535;
-  color: #fff;
-  font-family: Nunito Sans !important;
   margin: 0;
+  background-repeat: no-repeat;
+  font-family: Nunito Sans !important;
+  background:none;
+}
+
+html {	
+  height: auto;
+  background: -webkit-gradient(linear, left top, left bottom, from(#FFC107), color-stop(0.25, #FFB300), color-stop(0.5, #FFA000), color-stop(0.75, #FF8F00), to(#FF6F00)) fixed;
+
+	//background: linear-gradient(to bottom, #B721FF, #2AF598, #fec051, #FEE140, #FA709A );
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+html:before{
+	content:'';
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	z-index: -1;
+	background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.2), #1d1d1d 75%);
+}
+
+a:link {
+  color: #FFA000;
+}
+
+a:visited {
+  color: #EF6C00
 }

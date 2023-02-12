@@ -28,9 +28,9 @@ export class BeerListComponent implements OnInit{
   }
 
   query() {
-    this._punkApiService.query().subscribe(x => {
-      this.dataSource = new MatTableDataSource<BeerModel>(x);
-      this.dataSource.sort = this.sort
+    this._punkApiService.query().subscribe(data => {
+      this.dataSource = new MatTableDataSource<BeerModel>(data);
+      this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
     })
     
