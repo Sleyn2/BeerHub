@@ -35,6 +35,7 @@
           Alcohol by volume
         </th>
         <td mat-cell [matTooltip]="element.tagline" *matCellDef="let element">
+          <div *ngIf="element.abv; else noInformation"></div>
           {{ element.abv }}
         </td>
       </ng-container>
@@ -44,6 +45,7 @@
           International bittering unit
         </th>
         <td mat-cell [matTooltip]="element.tagline" *matCellDef="let element">
+          <div *ngIf="element.ibu; else noInformation"></div>
           {{ element.ibu }}
         </td>
       </ng-container>
@@ -53,6 +55,7 @@
           European Brewery Convention
         </th>
         <td mat-cell [matTooltip]="element.tagline" *matCellDef="let element">
+          <div *ngIf="element.ebc; else noInformation"></div>
           {{ element.ebc }}
         </td>
       </ng-container>
@@ -62,6 +65,7 @@
           Standard Reference Method
         </th>
         <td mat-cell [matTooltip]="element.tagline" *matCellDef="let element">
+          <div *ngIf="element.srm; else noInformation"></div>
           {{ element.srm }}
         </td>
       </ng-container>
@@ -69,6 +73,7 @@
       <ng-container matColumnDef="ph">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>pH</th>
         <td mat-cell [matTooltip]="element.tagline" *matCellDef="let element">
+          <div *ngIf="element.ph; else noInformation"></div>
           {{ element.ph }}
         </td>
       </ng-container>
@@ -78,6 +83,7 @@
           First brewery date
         </th>
         <td mat-cell [matTooltip]="element.tagline" *matCellDef="let element">
+          <div *ngIf="element.first_brewed; else noInformation"></div>
           {{ element.first_brewed }}
         </td>
       </ng-container>
@@ -88,3 +94,4 @@
   </div>
 </div>
 <button mat-button (click)="query()">click me!</button>
+<ng-template #noInformation>-</ng-template>
