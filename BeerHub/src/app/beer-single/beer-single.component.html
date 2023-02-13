@@ -1,0 +1,17 @@
+<mat-card class="beer-single-card">
+    <mat-card-header>
+      <div mat-card-avatar class="beer-single-header-image "></div>
+      <mat-card-title *ngIf="beer?.name">{{beer.name}}</mat-card-title>
+      <mat-card-subtitle *ngIf="beer?.tagline">{{beer.tagline}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image *ngIf="beer?.image_url; else noImageUrl" src= {{beer.image_url}}>
+    <ng-template #noImageUrl> <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba1.jpg"></ng-template>
+    <mat-card-content *ngIf = "beer?.description">
+    <p>
+      {{beer.description}}
+    </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="warn"><mat-icon>favorite</mat-icon></button>
+    </mat-card-actions>
+  </mat-card>

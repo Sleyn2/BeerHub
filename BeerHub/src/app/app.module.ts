@@ -15,6 +15,7 @@ import { PunkAPIService } from './shared/services/PunkAPI.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BeerHistoryComponent } from './beer-history/beer-history.component';
 import { BeerTypesComponent } from './beer-types/beer-types.component';
+import { BeerSingleComponent } from './beer-single/beer-single.component';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { BeerTypesComponent } from './beer-types/beer-types.component';
     MostLikedComponent,
     BeerHistoryComponent,
     BeerTypesComponent,
+    BeerSingleComponent,
   ],
   providers: [PunkAPIService],
   bootstrap: [AppComponent],
