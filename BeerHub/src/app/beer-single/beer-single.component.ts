@@ -27,6 +27,7 @@ async ngOnInit() {
   query() {
     this._punkApiService.getBeer(this.id).subscribe((data) => {
       this.beer = data[0];
+      console.log(this.beer)
     })
 }
 
