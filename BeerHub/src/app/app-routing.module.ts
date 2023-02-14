@@ -13,7 +13,8 @@ const routes: Routes = [
   { path: 'beer-types', component: BeerTypesComponent, pathMatch: 'full' },
   { path: 'beer/:beerId', component: BeerSingleComponent, pathMatch: 'full' },
   { path: 'random-beer', component: BeerSingleComponent, pathMatch: 'full' },
-  { path: 'last-beer', component: BeerSingleComponent, pathMatch: 'full' }
+  { path: 'last-beer', component: BeerSingleComponent, pathMatch: 'full' },
+  { path: '**', component: MainPageComponent, pathMatch: 'full' }
 ];
 
 

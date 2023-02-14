@@ -7,8 +7,7 @@
   <div class="flex-parent">
     <div class="flex-child-image">
       <img mat-card-image *ngIf="beer?.image_url; else noImageUrl" src={{beer.image_url}}>
-      <ng-template #noImageUrl> <img mat-card-image
-          src="../../assets/general/placeholder.png"></ng-template>
+      <ng-template #noImageUrl> <img mat-card-image src="../../assets/general/placeholder.png"></ng-template>
     </div>
     <div class="flex-child-description">
       <mat-card-content>

@@ -1,16 +1,10 @@
-<ngb-carousel
-	#carousel
-	[interval]="8000"
-	[pauseOnHover]=true
-	[pauseOnFocus]=false
-	(slide)="onSlide($event)"
-    class="carousel-size "
->
+<ngb-carousel #carousel [interval]="8000" [pauseOnHover]=true [pauseOnFocus]=false (slide)="onSlide($event)"
+	class="carousel-size ">
 	<ng-template ngbSlide *ngFor="let img of images; index as i">
 		<div class="carousel-caption">
 			<h3>{{titles.at(i)}}</h3>
 		</div>
-		<a  [routerLink]="['', router_links.at(i)]" rel="nofollow noopener noreferrer">
+		<a [routerLink]="['', router_links.at(i)]" rel="nofollow noopener noreferrer">
 			<div class="picsum-img-wrapper">
 				<img [src]="img" class="image" alt="My image {{i + 1}} description" />
 			</div>
