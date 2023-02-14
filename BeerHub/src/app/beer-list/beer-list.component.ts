@@ -3,7 +3,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { BeerModel } from '../shared/models/beer.model';
 import { PunkAPIService } from '../shared/services/PunkAPI.service';
-import { MatSort } from '@angular/material/sort'; 
+import { MatSort } from '@angular/material/sort';
 import { FormControl } from '@angular/forms';
 
 @Component({
@@ -11,16 +11,16 @@ import { FormControl } from '@angular/forms';
   templateUrl: './beer-list.component.html',
   styleUrls: ['./beer-list.component.scss'],
 })
-export class BeerListComponent implements OnInit{
+export class BeerListComponent implements OnInit {
   displayedColumns: string[] = ['id', 'name', 'abv', 'ibu', 'ebc', 'srm', 'ph', 'first_brewed'];
   dataSource = new MatTableDataSource<BeerModel>();
   inputChange = new FormControl();
-  
+
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  
 
-  constructor(private _punkApiService : PunkAPIService) {
+
+  constructor(private _punkApiService: PunkAPIService) {
   }
 
   ngOnInit() {
@@ -33,22 +33,10 @@ export class BeerListComponent implements OnInit{
       this.dataSource.sort = this.sort;
       this.dataSource.paginator = this.paginator;
     })
-    
+
   }
 
   public filter = () => {
     this.dataSource.filter = this.inputChange.value.trim().toLocaleLowerCase();
   }
-}
-
-export interface BeerListItem {
-  id: number;
-  name: string;
-  abv: number;
-  ibu: number;
-  ebc: number;
-  srm: number;
-  ph: number;
-  first_brewed: string;
-  tagline: string;
 }

@@ -9,9 +9,10 @@ import { MainPageComponent } from './main-page/main-page.component';
 const routes: Routes = [
   { path: '', component: MainPageComponent, pathMatch: 'full' },
   { path: 'beer-list', component: BeerListComponent, pathMatch: 'full' },
-  { path: 'beer-history', component: BeerHistoryComponent, pathMatch: 'full'},
-  { path: 'beer-types', component: BeerTypesComponent, pathMatch: 'full'},
-  { path: 'beer/:beerId', component: BeerSingleComponent, pathMatch: 'full' }
+  { path: 'beer-history', component: BeerHistoryComponent, pathMatch: 'full' },
+  { path: 'beer-types', component: BeerTypesComponent, pathMatch: 'full' },
+  { path: 'beer/:beerId', component: BeerSingleComponent, pathMatch: 'full' },
+  { path: 'random-beer', component: BeerSingleComponent, pathMatch: 'full' }
 ];
 
 
