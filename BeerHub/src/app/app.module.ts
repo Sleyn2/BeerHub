@@ -16,6 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BeerHistoryComponent } from './beer-history/beer-history.component';
 import { BeerTypesComponent } from './beer-types/beer-types.component';
 import { BeerSingleComponent } from './beer-single/beer-single.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { BeerSingleComponent } from './beer-single/beer-single.component';
     BeerTypesComponent,
     BeerSingleComponent,
   ],
-  providers: [PunkAPIService],
+  providers: [PunkAPIService,
+    CookieService],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
