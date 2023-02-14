@@ -12,7 +12,8 @@ const routes: Routes = [
   { path: 'beer-history', component: BeerHistoryComponent, pathMatch: 'full' },
   { path: 'beer-types', component: BeerTypesComponent, pathMatch: 'full' },
   { path: 'beer/:beerId', component: BeerSingleComponent, pathMatch: 'full' },
-  { path: 'random-beer', component: BeerSingleComponent, pathMatch: 'full' }
+  { path: 'random-beer', component: BeerSingleComponent, pathMatch: 'full' },
+  { path: 'last-beer', component: BeerSingleComponent, pathMatch: 'full' }
 ];
 
 
