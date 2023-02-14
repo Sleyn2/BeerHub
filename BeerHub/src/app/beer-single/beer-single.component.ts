@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PunkAPIService } from '../shared/services/PunkAPI.service';
 import { BeerSingleModel } from '../shared/models/beerSingle.model';
 
@@ -10,18 +10,24 @@ import { BeerSingleModel } from '../shared/models/beerSingle.model';
 })
 export class BeerSingleComponent {
 
-id: any
-public beer: BeerSingleModel
+  id: any
+  public beer: BeerSingleModel
 
-constructor(private route: ActivatedRoute, private _punkApiService : PunkAPIService) {
-  this.route.paramMap.subscribe(paramMap => {
-    this.id = paramMap.get('beerId')
-})
-}
+  constructor(private route: ActivatedRoute, private _punkApiService: PunkAPIService, private router: Router) {
 
-async ngOnInit() {
-   await this.query()
-}
+    if (this.router.url == "/random-beer") {
+      this.id = Math.floor(Math.random() * 325) + 1;
+    }
+    else {
+      this.route.paramMap.subscribe(paramMap => {
+        this.id = paramMap.get('beerId')
+      })
+    }
+  }
+
+  async ngOnInit() {
+    await this.query()
+  }
 
 
   query() {
@@ -29,6 +35,6 @@ async ngOnInit() {
       this.beer = data[0];
       console.log(this.beer)
     })
-}
+  }
 
 }

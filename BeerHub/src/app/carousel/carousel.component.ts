@@ -12,11 +12,11 @@ import { RouterModule } from '@angular/router';
 })
 export class CarouselComponent {
 
-	images = [1, 2].map((n) => `../../assets/carousel_images/${n}.png`);
+	images = [1, 2, 3].map((n) => `../../assets/carousel_images/${n}.png`);
 	
-	titles = ["Beer throughout the history", "Types of beer"]
+	titles = ["Beer throughout the history", "Types of beer", "Random beer"]
 
-	router_links = ["beer-history", "beer-types"]
+	router_links = ["beer-history", "beer-types", "random-beer"]
 	
 	paused = false;
 
