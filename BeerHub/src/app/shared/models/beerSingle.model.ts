@@ -10,6 +10,12 @@ export class BeerSingleModel {
     public tagline: string;
     public image_url: string;
     public description: string;
-    
+    public brewers_tips: string;
+    public food_pairing: string[];
+    public volume: volumeModel;
+}
 
+export class volumeModel {
+    public unit: string;
+    public value: number;
 }

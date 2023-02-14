@@ -1,6 +1,5 @@
 .beer-single-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    
   }
 
   .mat-mdc-card{
@@ -8,14 +7,43 @@
   }
 
   img{
-    width: 18vh;
+    width: 15vh;
     display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 10px;
-  margin-top: auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    margin-top: auto;
   }
 
   .mat-mdc-card-subtitle {
     color: #EF6C00
+  }
+  .beer-single-description-header
+  {
+    margin-bottom: 3px;
+    color: #EF6C00;
+    font-size: 15px;
+    font-weight: var(--mdc-typography-headline6-font-weight, 500);
+  }
+
+  .beer-single-description
+  {
+    margin-bottom: 5px;
+    inline-size: 90%;
+    word-wrap: break-word;  
+  }
+  
+  .flex-child-image{
+    flex: 1;
+    margin: auto;
+  }
+
+  .flex-child-description{
+    flex: 1;
+    margin: 10px;
+  }
+
+  .flex-parent{
+    display: flex;
+    width: auto;
   }
