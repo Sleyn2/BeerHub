@@ -3,7 +3,14 @@
     <div mat-card-avatar class="beer-single-header-image"></div>
     <mat-card-title *ngIf="beer?.name">
       {{ beer.name }}
-      <mat-checkbox class="example-margin">Add to favorite!</mat-checkbox>
+      <mat-checkbox
+        *ngIf="user"
+        class="example-margin"
+        [checked]="isFavourite"
+        (change)="checkBoxChange()"
+      >
+        favorite beer recipe
+      </mat-checkbox>
     </mat-card-title>
     <mat-card-subtitle *ngIf="beer?.tagline">{{
       beer.tagline

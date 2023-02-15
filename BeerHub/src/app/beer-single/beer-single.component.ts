@@ -16,6 +16,7 @@ export class BeerSingleComponent {
   private cookieName: string = 'LastBeerSite';
   public user: SocialUser;
   public loggedIn: boolean;
+  public isFavourite: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -46,12 +47,26 @@ export class BeerSingleComponent {
     this.authService.authState.subscribe((user) => {
       this.user = user;
       this.loggedIn = user != null;
+      if (this.user)
+        this._punkApiService
+          .isFavourite(Number(this.user.id), this.id)
+          .subscribe((res) => {
+            this.isFavourite = res.isFavourite;
+          });
     });
     await this.query();
   }
 
   addFavourite() {
     console.log(this.user);
+  }
+
+  checkBoxChange() {
+    if (this.user) {
+      this._punkApiService
+        .postFavourite(Number(this.user.id), this.id)
+        .subscribe((res) => (this.isFavourite = res.isFavourite));
+    }
   }
 
   query() {

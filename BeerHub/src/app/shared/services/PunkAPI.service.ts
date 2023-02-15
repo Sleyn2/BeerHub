@@ -29,10 +29,16 @@ export class PunkAPIService {
     return this._http.get<BeerModel>(this._appUrl + '/beer/random');
   }
 
-  putFavourite(userId: number, beerId: number): Observable<any> {
-    return this._http.put(this._appUrl + '/user/favourite', {
+  postFavourite(userId: number, beerId: number): Observable<any> {
+    return this._http.post(this._appUrl + '/user/fav/', {
       user_id: userId,
       beer_id: beerId,
     });
+  }
+
+  isFavourite(userId: number, beerId: number): Observable<any> {
+    return this._http.get(
+      this._appUrl + `/user/fav/?user_id=${userId}&beer_id=${beerId}`
+    );
   }
 }
