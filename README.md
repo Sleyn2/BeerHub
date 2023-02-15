@@ -1,5 +1,5 @@
 # BeerHub
-BeerHub jest to aplikacja webowa stworzona w ramach projektu na zajęciach studenckich, która używa open source [API](https://punkapi.com/). Back-end aplikacji został stworzony w oparciu o środowisko [Node.js](https://nodejs.org/en/). [Angular framework (version 15.0.0)](https://angular.io/) został użyty do stworzenia front-endu aplikacji. W celu stworzenia aplikacji zostały użyte pakiety [Bootstrap](https://ng-bootstrap.github.io/#/home), [MaterialUI](https://material.angular.io/). Również zostały użyte inne dostępne pakiety i serwisy Angulara jak np. NGX Cookie Service.
+BeerHub jest to aplikacja webowa stworzona w ramach projektu na zajęciach Studenckich, która używa open source [API](https://punkapi.com/). Back-end aplikacji został stworzony w oparciu o środowisko [Node.js](https://nodejs.org/en/). [Angular framework (version 15.0.0)](https://angular.io/) został użyty do stworzenia front-endu aplikacji. W celu stworzenia aplikacji zostały użyte pakiety [Bootstrap](https://ng-bootstrap.github.io/#/home), [MaterialUI](https://material.angular.io/). Również zostały użyte inne dostępne pakiety i serwisy Angulara jak np. NGX Cookie Service.
 ## Instalacja
 ### Node.js oraz NPM (Node Package Manager)
 - Instalator Node.js dostępny jest pod adresem: https://nodejs.org/en/
