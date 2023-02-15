@@ -45,7 +45,11 @@ export class BeerSingleComponent {
 
   query() {
     this._punkApiService.getBeer(this.id).subscribe((data) => {
+
       this.beer = data[0];
+      if (!this.beer) {
+        this.router.navigate([''])
+      }
     })
   }
 }
