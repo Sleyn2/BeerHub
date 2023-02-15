@@ -2,9 +2,9 @@ table {
   width: 100%;
 }
 
-.mat-table {
-  overflow-y: scroll;
-  height: 80vh;
+::ng-deep .mat-mdc-table, .mdc-data-table__content {
+  border-bottom-right-radius: var(--mdc-shape-small, 4px);
+  border-bottom-left-radius: var(--mdc-shape-small, 4px);
 }
 
 .mat-mdc-cell,
@@ -12,9 +12,25 @@ table {
   text-align: center !important;
 }
 
-::ng-deep .mat-mdc-form-field {
+.mat-mdc-form-field {
   flex-direction: unset !important;
-  width: 80%;
+  width: 30vw;
+  display: inline-flex;
+}
+
+::ng-deep .mdc-text-field {
+  border-top-right-radius: 0 !important;
+}
+
+::ng-deep .mat-mdc-form-field-subscript-wrapper {
+  width: 0px !important;
+}
+
+.mat-mdc-paginator {
+  width: 45vw;
+  float:right;
+  display: inline-flex;
+  border-top-right-radius: var(--mdc-shape-small, 4px);
 }
 
 .mat-cell,
