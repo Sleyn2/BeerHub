@@ -3,6 +3,11 @@
   background-size: contain;
 }
 
+::ng-deep .mdc-button{
+  width: 0.2em !important;
+  height: 0.8em !important;
+}
+
 .mat-mdc-card {
   background-color: #4d4d4d;
 }
