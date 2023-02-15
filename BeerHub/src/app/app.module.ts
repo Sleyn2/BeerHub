@@ -15,6 +15,12 @@ import { PunkAPIService } from './shared/services/PunkAPI.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BeerHistoryComponent } from './beer-history/beer-history.component';
 import { BeerTypesComponent } from './beer-types/beer-types.component';
+import {
+  FacebookLoginProvider,
+  GoogleLoginProvider,
+  SocialAuthServiceConfig,
+  SocialLoginModule,
+} from '@abacritt/angularx-social-login';
 import { BeerSingleComponent } from './beer-single/beer-single.component';
 import { CookieService } from 'ngx-cookie-service';
 
@@ -29,6 +35,7 @@ import { CookieService } from 'ngx-cookie-service';
     CarouselComponent,
     HttpClientModule,
     ReactiveFormsModule,
+    SocialLoginModule,
   ],
   declarations: [
     AppComponent,
@@ -39,8 +46,27 @@ import { CookieService } from 'ngx-cookie-service';
     BeerTypesComponent,
     BeerSingleComponent,
   ],
-  providers: [PunkAPIService,
-    CookieService],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '208567128833-81qak2n21290s6ie0gtkrlrbl6i5jvma.apps.googleusercontent.com'
+            ),
+          },
+        ],
+        onError: (err) => {
+          console.error(err);
+        },
+      } as SocialAuthServiceConfig,
+    },
+    PunkAPIService,
+    CookieService,
+  ],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

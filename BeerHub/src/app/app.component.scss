@@ -16,6 +16,13 @@ h6 {
   margin: 8px 0;
 }
 
+::ng-deep .mdc-button{
+  margin-right: 2vw !important;
+  width: 4em;
+  height: 1.6em !important;
+  font-size: 1.5em;
+}
+
 p {
   margin: 0;
 }
@@ -29,7 +36,7 @@ p {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 10vh;
   display: flex;
   align-items: center;
   opacity: 1;
@@ -44,7 +51,7 @@ p {
 .content {
   color: #fff;
   display: flex;
-  margin: 60px auto 32px;
+  margin: 10vh auto 32px;
   height: calc(100% - 100px);
   max-height: 100vh;
   flex-direction: column;
@@ -52,7 +59,6 @@ p {
 }
 
 .page {
-  padding-top: 5%;
   width: 85%;
   height: 100%;
   border-radius: 25px;
