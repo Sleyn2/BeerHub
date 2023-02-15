@@ -23,7 +23,7 @@ node server.js
 -  Uruchomienie:
 ng serve
 ## Uruchomienie aplikacji
-- Gdy Node server oraz aplikacja Angular zostały uruchomione, to aplikacja jest dostępna pod adresem: http://localhost:4200/
+- Gdy Node server oraz aplikacja Angular zostaną uruchomione, to aplikacja jest dostępna pod adresem: http://localhost:4200/
 ## Najważniejsze pakiety
 - Bootstrap:
 https://ng-bootstrap.github.io/#/home
