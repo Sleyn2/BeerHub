@@ -8,9 +8,9 @@
     </div> 
     <div class="spacer"></div>
     <button mat-raised-button color="primary" [routerLink]="['beer-list']">
-      Lista
+      Beer list
     </button>
-    <div style="justify-content: center; display: flex; padding-right: 2vw; min-width: 10vw;">
+    <div style="justify-content: center; display: flex; min-width: 10vw;">
       <asl-google-signin-button
         *ngIf="!this.loggedIn"
         type="icon"
@@ -20,6 +20,9 @@
       ></asl-google-signin-button>
       <img *ngIf="user" src="{{ user.photoUrl }}" referrerpolicy="no-referrer" style="border-radius: 50%; height: 5vh; width: 5vh;"/>
     </div>
+    <button *ngIf="user" mat-raised-button color="primary" style="padding-right: 2vw;" (click)="signOut()">
+      Sign out
+    </button>
   </div>
 
   <div [ngClass]="{ page: !isHomeRoute() }">

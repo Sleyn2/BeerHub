@@ -31,14 +31,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-  // refreshToken(): void {
-  //   this.authService.refreshAuthToken(GoogleLoginProvider.PROVIDER_ID);
-  // }
-
-  // getAccessToken(): void {
-  //   this.authService.getAccessToken(GoogleLoginProvider.PROVIDER_ID).then(accessToken => this.accessToken = accessToken);
-  // }
-
   signOut(): void {
     this.authService.signOut();
   }
