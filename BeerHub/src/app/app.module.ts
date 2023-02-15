@@ -21,6 +21,8 @@ import {
   SocialAuthServiceConfig,
   SocialLoginModule,
 } from '@abacritt/angularx-social-login';
+import { BeerSingleComponent } from './beer-single/beer-single.component';
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   imports: [
@@ -42,6 +44,7 @@ import {
     MostLikedComponent,
     BeerHistoryComponent,
     BeerTypesComponent,
+    BeerSingleComponent,
   ],
   providers: [
     {
@@ -51,7 +54,9 @@ import {
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('208567128833-81qak2n21290s6ie0gtkrlrbl6i5jvma.apps.googleusercontent.com'),
+            provider: new GoogleLoginProvider(
+              '208567128833-81qak2n21290s6ie0gtkrlrbl6i5jvma.apps.googleusercontent.com'
+            ),
           },
         ],
         onError: (err) => {
@@ -60,6 +65,7 @@ import {
       } as SocialAuthServiceConfig,
     },
     PunkAPIService,
+    CookieService,
   ],
   bootstrap: [AppComponent],
 })

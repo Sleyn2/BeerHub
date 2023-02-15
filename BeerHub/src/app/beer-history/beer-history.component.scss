@@ -1,5 +1,4 @@
 * {
-    margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
@@ -24,7 +23,7 @@
     height: 100%;
     width: 2px;
     background-color: black;
-    border: 1px solid gray;
+    border: 1px solid black;
     position: absolute;
     margin-left: 1px;
 }
@@ -89,7 +88,7 @@
     }
 
     .text-muted {
-        color: black !important;
+        color: lightgray!important;
         font-size: 1.15em;
     }
 

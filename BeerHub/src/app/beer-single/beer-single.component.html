@@ -1,0 +1,80 @@
+<mat-card class="beer-single-card">
+  <mat-card-header>
+    <div mat-card-avatar class="beer-single-header-image "></div>
+    <mat-card-title *ngIf="beer?.name">{{beer.name}}</mat-card-title>
+    <mat-card-subtitle *ngIf="beer?.tagline">{{beer.tagline}}</mat-card-subtitle>
+  </mat-card-header>
+  <div class="flex-parent">
+    <div class="flex-child-image">
+      <img mat-card-image *ngIf="beer?.image_url; else noImageUrl" src={{beer.image_url}}>
+      <ng-template #noImageUrl> <img mat-card-image src="../../assets/general/placeholder.png"></ng-template>
+    </div>
+    <div class="flex-child-description">
+      <mat-card-content>
+        <p class="beer-single-description-header" *ngIf="beer?.description">
+          Description:
+        </p>
+        <p class="beer-single-description" *ngIf="beer?.description">
+          {{beer.description}}
+        </p>
+        <p class="beer-single-description-header" *ngIf="beer?.first_brewed">
+          First brewed:
+        </p>
+        <p class="beer-single-description" *ngIf="beer?.first_brewed">
+          {{beer.first_brewed}}
+        </p>
+        <p class="beer-single-description-header" *ngIf="beer?.brewers_tips">
+          Brewers tips:
+        </p>
+        <p class="beer-single-description" *ngIf="beer?.brewers_tips">
+          {{beer.brewers_tips}}
+        </p>
+        <p class="beer-single-description-header" *ngIf="beer?.volume">
+          Volume:
+        </p>
+        <p class="beer-single-description" *ngIf="beer?.volume">
+          {{beer.volume.value}} {{beer.volume.unit}}
+        </p>
+        <p class="beer-single-description-header" *ngIf="beer?.abv">
+          Alcohol by volume:
+        </p>
+        <p class="beer-single-description" *ngIf="beer?.abv">
+          {{beer.abv}}
+        </p>
+        <p class="beer-single-description-header" *ngIf="beer?.ibu">
+          International bittering unit:
+        </p>
+        <p class="beer-single-description" *ngIf="beer?.ibu">
+          {{beer.ibu}}
+        </p>
+        <p class="beer-single-description-header" *ngIf="beer?.ebc">
+          European Brewery Convention:
+        </p>
+        <p class="beer-single-description" *ngIf="beer?.ebc">
+          {{beer.ebc}}
+        </p>
+        <p class="beer-single-description-header" *ngIf="beer?.srm">
+          Standard Reference Method:
+        </p>
+        <p class="beer-single-description" *ngIf="beer?.srm">
+          {{beer.srm}}
+        </p>
+        <p class="beer-single-description-header" *ngIf="beer?.ph">
+          pH:
+        </p>
+        <p class="beer-single-description" *ngIf="beer?.ph">
+          {{beer.ph}}
+        </p>
+        <p class="beer-single-description-header" *ngIf="beer?.food_pairing">
+          Goes well with:
+        </p>
+        <p class="beer-single-description" *ngIf="beer?.food_pairing">
+          {{beer.food_pairing.join(', ')}}
+        </p>
+      </mat-card-content>
+    </div>
+  </div>
+  <mat-card-actions>
+    <button mat-button color="warn"><mat-icon>favorite</mat-icon></button>
+  </mat-card-actions>
+</mat-card>

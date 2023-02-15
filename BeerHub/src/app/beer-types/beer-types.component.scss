@@ -1,0 +1,134 @@
+.resize_like_image {
+
+  text-align: center;
+  position: relative;
+  transform-origin: center center;
+}
+
+.tree ul {
+
+  padding-inline-start: 0;
+  padding-top: 1.5vw;
+  position: relative;
+
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.tree li {
+  display: inline;
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 1.2vw 0 0 0.7vw;
+
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+//::before and ::after to draw the connectors
+
+.tree li::before,
+.tree li::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 0.2vw solid gray;
+  width: 50%;
+  // length of the hanging lines
+  height: 1.2vw;
+}
+
+.tree li::after {
+  right: auto;
+  left: 50%;
+  border-left: 0.2vw solid gray;
+}
+
+/*Remove left-right connectors from elements without 
+any siblings*/
+.tree li:only-child::after,
+.tree li:only-child::before {
+  display: none;
+}
+
+/*Remove space from the top of single children*/
+.tree li:only-child {
+  padding-top: 0 none;
+}
+
+/*Remove left connector from first child and 
+right connector from last child*/
+.tree li:first-child::before,
+.tree li:last-child::after {
+  border: 0 none;
+}
+
+/*Adding back the vertical connector to the last nodes*/
+.tree li:last-child::before {
+  border-right: 0.2vw solid grey;
+  border-radius: 0 0.5vw 0 0;
+  -webkit-border-radius: 0 0.5vw 0 0;
+  -moz-border-radius: 0 0.5vw 0 0;
+}
+
+.tree li:first-child::after {
+  border-radius: 0.5vw 0 0 0;
+  -webkit-border-radius: 0.5vw 0 0 0;
+  -moz-border-radius: 0.5vw 0 0 0;
+}
+
+/*Add downward connectors from parents*/
+.tree ul ul::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 0.2vw solid grey;
+  width: 0;
+  height: 1.5vw;
+}
+
+.tree-img {
+  width: 5vw;
+  height: 5vw;
+  border: 0.5vw solid #000;
+  overflow: hidden;
+  background: #000;
+  color: #fff;
+  display: inline-block;
+
+
+  border-radius: 0.5vw;
+  -webkit-border-radius: 0.5vw;
+  -moz-border-radius: 0.5vw;
+
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+}
+
+.tree-header {
+  width: 5.5vw;
+  text-align: center;
+  overflow-wrap: anywhere;
+  font-size: 1.1vw;
+  font-weight: bold;
+}
+ 
+.column {
+  float: left;
+  width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
