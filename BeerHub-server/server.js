@@ -56,7 +56,7 @@ const User = sequelize.define("user", {
   user_password: Sequelize.STRING,
 });
 
-const Favourites = -sequelize.define("favourites", {
+const Favourites = sequelize.define("favourites", {
   id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -64,7 +64,10 @@ const Favourites = -sequelize.define("favourites", {
   },
   beer_id: Sequelize.INTEGER,
   user_id: Sequelize.INTEGER,
-  deleted: Sequelize.BOOLEAN,
+  deleted: {
+    type: Sequelize.BOOLEAN,
+    defaultValue: false,
+  },
 });
 
 // synchroniznacja bazy danych - np. tworzenie tabel
@@ -113,20 +116,27 @@ async function randomBeer(request, response) {
 }
 
 async function favourite(request, response) {
-  var beerId = request.body.beer_id;
-  var userId = request.body.user_id;
-  console.log(request.body);
-  Favourites.count({
-    where: { user_id: userId, beer_id: beerId, deleted: 0 },
-  }).then((count) => {
-    if (count != 0) {
-      Favourites.create({ user_id: userId, beer_id: beerId, deleted: 0 });
-      response.send({favourite: true});
-    } else {
-      
-    }
-  });
-  response.send({favourite: false});
+  const beerId = request.body.beer_id;
+  const userId = request.body.user_id;
+  if (userId && beerId) {
+    Favourites.count({
+      where: { user_id: userId, beer_id: beerId, deleted: false },
+    }).then(async (count) => {
+      if (count != 0) {
+        const fav = await Favourites.findOne({
+          user_id: userId,
+          beer_id: beerId,
+          deleted: false,
+        });
+        fav.deleted = true;
+        await fav.save();
+        response.send({ isFavourite: false });
+      } else {
+        Favourites.create({ user_id: userId, beer_id: beerId });
+        response.send({ isFavourite: true });
+      }
+    });
+  } else response.send({ wrongParams: true });
 }
 
 //lab login
