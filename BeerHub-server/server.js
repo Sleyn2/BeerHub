@@ -78,7 +78,7 @@ app.get("/api/beer/random", [randomBeer]);
 
 app.get("/api/beer-list-all/", [query]);
 
-app.post("/api/user/favourite" [favourite])
+app.post("/api/user/favourite/", [favourite]);
 
 app.get("/api/users/", [checkSessions, getUsers]);
 
@@ -113,14 +113,26 @@ async function randomBeer(request, response) {
 }
 
 async function favourite(request, response) {
-  
+  var beerId = request.body.beer_id;
+  var userId = request.body.user_id;
+  console.log(request.body);
+  Favourites.count({
+    where: { user_id: userId, beer_id: beerId, deleted: 0 },
+  }).then((count) => {
+    if (count != 0) {
+      Favourites.create({ user_id: userId, beer_id: beerId, deleted: 0 });
+      response.send({favourite: true});
+    } else {
+      
+    }
+  });
+  response.send({favourite: false});
 }
 
 //lab login
 
 // rejestrowanie użytkownika
 function register(request, response) {
-  console.log(request.body);
   var user_name = request.body.user_name;
   var user_password = request.body.user_password;
   if (user_name && user_password) {
