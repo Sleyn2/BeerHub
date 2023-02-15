@@ -2,13 +2,9 @@
 
 <div class="content" role="main">
   <div class="toolbar" role="banner">
-    <div [routerLink]="['']" style="cursor: pointer;">
-      <img  
-        width="40"
-        alt="Angular Logo"
-        src="../assets/general/logo2.png"
-      />
-      <span style="font-size: x-large;">BeerHub</span>
+    <div [routerLink]="['']" style="cursor: pointer">
+      <img width="40" alt="Angular Logo" src="../assets/general/logo2.png" />
+      <span style="font-size: x-large">BeerHub</span>
     </div>
     <div class="spacer"></div>
     <button mat-raised-button color="primary" [routerLink]="['beer-list']">
@@ -16,9 +12,10 @@
     </button>
   </div>
 
-  <div [ngClass]="{'page': !isHomeRoute()}">
+  <div [ngClass]="{ page: !isHomeRoute() }">
     <div style="justify-content: center; display: flex">
-      <asl-google-signin-button *ngIf="!this.loggedIn"
+      <asl-google-signin-button
+        *ngIf="!this.loggedIn"
         type="icon"
         size="medium"
         shape="circle"
