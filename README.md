@@ -1,5 +1,5 @@
 # BeerHub
-BeerHub jest to aplikacja webowa, która używa open source [API](https://punkapi.com/). Back-end aplikacji został stworzony w oparciu o środowisko Node.js. Angular framework (version 15.0.0) został użyty do stworzenia front-endu aplikacji. W celu stworzenia aplikacji zostały użyte pakiety Bootstrap, MaterialUI. Również zostały użyte inne dostępne pakiety i serwisy Angulara jak np. NGX Cookie Service.
+BeerHub jest to aplikacja webowa, która używa open source [API](https://punkapi.com/). Back-end aplikacji został stworzony w oparciu o środowisko [Node.js](https://nodejs.org/en/). [Angular framework (version 15.0.0)](https://angular.io/) został użyty do stworzenia front-endu aplikacji. W celu stworzenia aplikacji zostały użyte pakiety [Bootstrap](https://ng-bootstrap.github.io/#/home), [MaterialUI](https://material.angular.io/). Również zostały użyte inne dostępne pakiety i serwisy Angulara jak np. NGX Cookie Service.
 ## Instalacja
 ### Node Server
 #### Komendy wiersza poleceń:
@@ -22,12 +22,18 @@ node server.js
 #### Komendy wiersza poleceń:
 -  Uruchomienie:
 ng serve
+## Uruchomienie aplikacji
+- Gdy Node server oraz aplikacja Angular zostały uruchomione, to aplikacja jest dostępna pod adresem: http://localhost:4200/
 ## Najważniejsze pakiety
 - Bootstrap
 https://ng-bootstrap.github.io/#/home
 - MaterialUI
 https://material.angular.io/
 ## Pomocne strony
+- Node.js:
+https://nodejs.org/en/
+- Angular:
+https://angular.io/
 - SQLite Viewer:
 https://inloop.github.io/sqlite-viewer/
 - Punk API:
