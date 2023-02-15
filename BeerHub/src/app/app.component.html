@@ -2,21 +2,21 @@
 
 <div class="content" role="main">
   <div class="toolbar" role="banner">
-    <div [routerLink]="['']">
-      <img
+    <div [routerLink]="['']" style="cursor: pointer;">
+      <img  
         width="40"
         alt="Angular Logo"
         src="../assets/general/logo2.png"
       />
-      <span>BeerHub</span>
+      <span style="font-size: x-large;">BeerHub</span>
     </div>
     <div class="spacer"></div>
-    <button mat-button color="primary" [routerLink]="['beer-list']">
+    <button mat-raised-button color="primary" [routerLink]="['beer-list']">
       Lista
     </button>
   </div>
 
-  <div class="page">
+  <div [ngClass]="{'page': !isHomeRoute()}">
     <router-outlet></router-outlet>
   </div>
   <!-- Footer -->
