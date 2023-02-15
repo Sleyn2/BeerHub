@@ -78,19 +78,9 @@ app.get("/api/beer/random", [randomBeer]);
 
 app.get("/api/beer-list-all/", [query]);
 
-app.post("/api/register/", [register]);
-
-app.post("/api/login/", [login]);
-
-app.get("/api/login-test/", [checkSessions, loginTest]);
-
-app.get("/api/logout/", [checkSessions, logout]);
+app.post("/api/user/favourite" [favourite])
 
 app.get("/api/users/", [checkSessions, getUsers]);
-
-app.get("/api/messages/:id", [checkSessions, getMessages]);
-
-app.post("/api/messages/", [checkSessions, sendMessages]);
 
 app.use(express.static(__dirname + "/static/"));
 
@@ -120,6 +110,10 @@ async function beer(request, response) {
 async function randomBeer(request, response) {
   let res = await axios.get("https://api.punkapi.com/v2/beers/random");
   response.send(res.data);
+}
+
+async function favourite(request, response) {
+  
 }
 
 //lab login
