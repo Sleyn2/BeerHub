@@ -10,10 +10,7 @@
     <button mat-raised-button color="primary" [routerLink]="['beer-list']">
       Lista
     </button>
-  </div>
-
-  <div [ngClass]="{ page: !isHomeRoute() }">
-    <div style="justify-content: center; display: flex">
+    <div style="justify-content: center; display: flex; padding-right: 2vw; min-width: 10vw;">
       <asl-google-signin-button
         *ngIf="!this.loggedIn"
         type="icon"
@@ -21,12 +18,11 @@
         shape="circle"
         width="300"
       ></asl-google-signin-button>
-      <img src="{{ user?.photoUrl }}" referrerpolicy="no-referrer" />
-      <div>
-        <h4>{{ user?.name }}</h4>
-        <p>{{ user?.email }}</p>
-      </div>
+      <img *ngIf="user" src="{{ user?.photoUrl }}" referrerpolicy="no-referrer" style="border-radius: 50%; height: 5vh; width: 5vh;"/>
     </div>
+  </div>
+
+  <div [ngClass]="{ page: !isHomeRoute() }">
     <router-outlet></router-outlet>
   </div>
   <!-- Footer -->
