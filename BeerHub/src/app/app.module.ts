@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { AdsenseModule } from 'ng2-adsense';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -26,6 +27,7 @@ import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   imports: [
+    AdsenseModule.forRoot(),
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

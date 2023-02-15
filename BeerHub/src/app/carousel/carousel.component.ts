@@ -30,7 +30,7 @@ export class CarouselComponent {
 			this.router_links = ["beer-history", "beer-types", "random-beer"]
 		}
 		else {
-			this.images = [1, 2, 3, 3].map((n) => `../../assets/carousel_images/${n}.png`);
+			this.images = [1, 2, 3, 4].map((n) => `../../assets/carousel_images/${n}.png`);
 
 			this.titles = ["Beer throughout the history", "Types of beer", "Random beer", "Last beer"]
 
